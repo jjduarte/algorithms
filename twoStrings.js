@@ -1,13 +1,15 @@
 function twoStrings(s1, s2) {
 
-    if(s1.length < 1 || s2.length < 1){
-        return 'NO';
+    if (s1.length < 1 || s2.length > Math.pow(10, 5)){
+        return 'NO'
     }
 
-    const result =  [...s1].filter(value => [...s2].includes(value));
-    return (result.length > 0 ? "YES" : "NO");
-    
-    // return 'NO';
+    for (let i=0; i < s1.length; i++ ) {
+        if (s2.includes(s1[i])){
+            return 'YES'
+        }
+    }
+    return 'NO';
 }
 
-console.log(twoStrings("holly", "sito"));
+console.log(twoStrings("ohlly", "sito"));
